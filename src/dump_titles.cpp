@@ -39,8 +39,8 @@ int main(int argc, char** argv) {
     zim::File::const_iterator it;
     
     for (it = zimFile.begin(); it != zimFile.end(); ++it) {
-		if ( it->getNamespace() != filterNS )
-			continue;
+        if ( it->getNamespace() != filterNS )
+            continue;
 
         cout << it->getTitle() << endl;
     }
