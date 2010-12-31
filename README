@@ -1,0 +1,59 @@
+zim-utils
+---------
+
+This is a set of some simple utilities to work with the zim file format.
+I wrote these for the purpose of getting simple to use text dumps from the wikipedia
+Release version, and was alittle frustrated by the lack of any existing code / documentation
+to do this.
+
+the zim file format is currently used by Wikipedia for their Wikipedia Release version.
+This format is typically used for offline browsing with software such as Kiwix.
+for more details on these see:
+
+  http://www.openzim.org/Main_Page
+  http://en.wikipedia.org/wiki/Wikipedia:Release_Version
+  http://www.kiwix.org/index.php/Main_Page
+
+This software is distributed under the Apache 2.0 license
+
+Installing
+----------
+To compile / install these, one first needs to have the zimlib library installed. This in itself
+is not fully automatic, and requires some manual work currently. 
+
+Here's the quickest way to get up and running with the pre-requisites:
+
+1. Install liblzma library
+
+  on Ubuntu: sudo apt-get install liblzma-dev
+
+2. Install cxxtools library
+
+  This abit tricky since the version currently available on Ubuntu repository is lacking some needed headers.
+  To install from SVN:
+
+  svn co https://cxxtools.svn.sourceforge.net/svnroot/cxxtools/trunk/cxxtools cxxtools 
+  cd cxxtools
+  ./autogen.sh
+  ./configure && make && sudo make install
+	
+3. Install zimlib
+
+  svn co http://svn.openzim.org/svnroot/trunk/zimlib zimlib
+  cd zimlib
+  ./autogen.sh
+  ./configure && make && sudo make install
+
+
+Once these are all installed, you should be able to easily build all the zim-utils executables using the provided Makefile
+
+Usage
+-----
+Currently, utilities included are:
+
+* dump_titles
+  Dump all article titles in zim file. Example usage
+
+  ./dump_titles mywikidump.zim
+
+
