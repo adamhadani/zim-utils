@@ -1,6 +1,7 @@
 # 
 # zim-utils Makefile
 #
+###############################################################################
 
 CC=g++
 CFLAGS=-lzim
@@ -18,3 +19,4 @@ make: $(SRCDIR)/dump_titles.o
 
 clean:
 	rm -rf $(BUILDDIR) $(SRCDIR)/*.o
+
